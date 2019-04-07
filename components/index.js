@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import '../style.css';
+import fetch from 'isomorphic-unfetch'
+
 
 export default class TodoList extends Component {
 constructor(props){
 super(props)
 this.state={
     userInput:'',
-    list:[]
+    list:this.props.todoInitial
     }
 }
     handleChange(input){
@@ -50,24 +52,26 @@ this.state={
                 
                 <h3>TODO LIST</h3>
                 <table>
+                    <thead>
                     <tr>
                         <th>Todo Item</th>
-                       
                     </tr>
+                    </thead>
+                    <tbody>
                 {this.state.list.map((value,i)=>
-                <div>
-                    <tr>
+                    <tr key={i}>
                         <td>{value}</td>
                         <td><button className="delete" onClick={()=>this.handleDelete(i)}>Delete</button></td>
                     </tr>
-                </div>
                 )}
+                </tbody>
                 </table>
             </div>
         )
     }
+
+    
+
 }
-
-
 
   

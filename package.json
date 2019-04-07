@@ -2,11 +2,11 @@
   "name": "victor_todolist_enye",
   "version": "1.0.0",
   "description": "Enye Assignment One. To do List App in React(Nextjs)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "nodemon server.js",
+    "build": "next build ",
+    "start": "cross-env NODE_ENV=production node server.js"
   },
   "keywords": [
     "Enye",
@@ -24,6 +24,8 @@
   "license": "ISC",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
+    "express": "^4.16.4",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^8.0.3",
     "nextjs": "0.0.3",
     "react": "^16.8.6",
